@@ -1,7 +1,7 @@
 //  ViewController.swift
 //  QuadraSolve
 //  Created by M. von Hagen on 04.11.16.
-//  Copyright © 2016 COD3LTA. All rights reserved.
+//  Copyright © 2016 Marvincent. All rights reserved.
 
 import UIKit
 import Darwin
@@ -72,38 +72,38 @@ class ViewController: UIViewController{
         if (a_value.text?.isEmpty)! || (p_value.text?.isEmpty)! || (q_value.text?.isEmpty)!   {
             
             if (p_value.text?.isEmpty)! && (q_value.text?.isEmpty)! && (a_value.text?.isEmpty)! {
-                self.out.text = "a = ?; p = ?; q = ?"
+                self.out.text = "a=?; p=?; q=?"
                 return
             }
             
             if (a_value.text?.isEmpty)! && (p_value.text?.isEmpty)! {
-                self.out.text = "a = ?; p = ?"
+                self.out.text = "a=?; p=?"
                 return
             }
             
             if (a_value.text?.isEmpty)! && (q_value.text?.isEmpty)! {
-                self.out.text = "a = ?; q = ?"
+                self.out.text = "a=?; q=?"
                 return
             }
             
             if (p_value.text?.isEmpty)! && (q_value.text?.isEmpty)! {
-                self.out.text = "p = ?; q = ?"
+                self.out.text = "p=?; q=?"
                 return
             }
             
             
             if (a_value.text?.isEmpty)!  {
-                self.out.text = "a = ?"
+                self.out.text = "a=?"
                 return
             }
             
             if (p_value.text?.isEmpty)!  {
-                self.out.text = "p = ?"
+                self.out.text = "p=?"
                 return
             }
             
             if (q_value.text?.isEmpty)!  {
-                self.out.text = "q = ?"
+                self.out.text = "q=?"
                 return
             }
             
@@ -144,7 +144,7 @@ class ViewController: UIViewController{
         
         //      Ausgabe
         if a==0 {
-            out.text = "a ≠ 0"}
+            out.text = "a≠0"}
         else {
             let dis = pow(p, 2) - 4*q
             let uSqrt = pow(p/2, 2) - q
@@ -153,7 +153,7 @@ class ViewController: UIViewController{
             
             let lan = calc.title(for: .normal)
             var comma = false
-            if lan == "Berechne" || lan == "Calculer" || lan == "Calcolare" || lan=="Calcular" || lan == "подсчитывать" || lan == "Izračunati" || lan == "Beräkna" || lan == "Hesaplamak" || lan == "Obliczać" || lan == "Calcular" {
+            if lan == "Berechne" || lan == "Calculer" || lan == "Calcolare" || lan=="Calcular" || lan == "подсчитывать" || lan == "Izračunati" || lan == "Beräkna" || lan == "Hesaplamak" || lan == "Obliczać" {
                 comma = true
             }
             if comma==true {
@@ -185,68 +185,8 @@ class ViewController: UIViewController{
                 }
             }
             else if setOfNumbers.title(for: .normal)=="ℝ"{
-                
-                if lan == "Berechne" {
-                    out.text = "Keine Lösung"
-                }
-                if lan == "Calculate" {
-                    out.text = "No Solution"
-                }
-                
-                if lan == "Calculer" {
-                    out.text = "Pas de solution"
-                }
-                
-                if lan == "計算" {
-                    out.text = "沒有解決方案"
-                }
-                
-                if lan == "Calcular" {
-                    out.text = "Sin solución"
-                }
-                if lan == "计算" {
-                    out.text = "没有解决方案"
-                }
-                
-                if lan == "Calcolare" {
-                    out.text = "Nessuna soluzione"
-                }
-                
-                if lan == "подсчитывать"{
-                    out.text = "Нет решения"
-                }
-                
-                if lan == "Calcular"{
-                    out.text = "Sem solução"
-                }
-                
-                if lan == "計算する"{
-                    out.text = "ソリューションなし"
-                }
-                
-                if lan == "Izračunati"{
-                    out.text = "Nema rješenja"
-                }
-                
-                if lan == "Beräkna"{
-                    out.text = "Ingen lösning"
-                }
-                
-                if lan == "Hesaplamak"{
-                    out.text = "Çözüm yok"
-                }
-                
-                if lan == "حساب"{
-                    out.text = "لا حل"
-                }
-                
-                if lan == "Obliczać"{
-                    out.text = "Brak rozwiązania"
-                }
-                
+                out.text = "\(a_value.text!)x²\(String(describing: q_sign.title(for: .normal)!))\(p_value.text!)x\(String(describing: q_sign.title(for: .normal)!))\(q_value.text!)≠0"
             }
         }
     }
 }
-
-let ushavingSkills = true
