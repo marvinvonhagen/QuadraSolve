@@ -10,3 +10,5 @@
 
 /* Class = "UIButton"; normalTitle = "+"; ObjectID = "qr4-vx-j3e"; */
 "qr4-vx-j3e.normalTitle" = "+";
+
+"ard-9d-vkf.text" = "Marvin von Hagen entwickelte QuadraSolve mit Unterstützung von Vincent von Oepen. \nInzwischen steht eine von Simon Bohnen portierte Android-Version im Play Store zur Verfügung, deren Fokus auf erweiterter Funktionalität statt auf Barrierefreiheit liegt.";

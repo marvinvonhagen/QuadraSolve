@@ -17,6 +17,10 @@ class InfoViewController: UIViewController, MFMailComposeViewControllerDelegate 
         // Do any additional setup after loading the view.
     }
 
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -31,6 +35,10 @@ class InfoViewController: UIViewController, MFMailComposeViewControllerDelegate 
         self.present(mc, animated: true, completion: nil)
     }
     
+    
+    @IBAction func rSwipe(_ sender: Any) {
+        performSegue(withIdentifier: "rSSegue", sender: self)
+    }
     
     /*
     // MARK: - Navigation
