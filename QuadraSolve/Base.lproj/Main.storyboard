@@ -175,10 +175,9 @@
                                 <rect key="frame" x="337" y="395" width="22" height="22"/>
                                 <viewLayoutGuide key="safeArea" id="3V6-Va-rws"/>
                                 <connections>
-                                    <segue destination="Tag-iP-wla" kind="popoverPresentation" popoverAnchorView="NJf-TU-fc0" id="Q3T-fE-Gau">
+                                    <segue destination="Tag-iP-wla" kind="show" id="Q3T-fE-Gau">
                                         <segue key="commit" inheritsFrom="parent" id="pK4-rH-YrU"/>
                                         <segue key="preview" inheritsFrom="commit" id="9H2-Mm-qPR"/>
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                     </segue>
                                 </connections>
                             </button>
@@ -193,10 +192,16 @@
                                     <action selector="setOfNumbers:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZXb-rL-0Cx"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="none" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="39E-ij-KC5">
+                                <rect key="frame" x="0.0" y="437" width="375" height="67"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="35"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="none" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="jdv-PC-K76">
-                                <rect key="frame" x="16" y="54" width="343" height="65"/>
+                                <rect key="frame" x="16" y="44" width="343" height="75"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="jdv-PC-K76" secondAttribute="height" multiplier="50:9" id="HGP-Ar-gTd"/>
+                                    <constraint firstAttribute="width" secondItem="jdv-PC-K76" secondAttribute="height" multiplier="343:75" id="vmp-t6-FMe"/>
                                 </constraints>
                                 <viewLayoutGuide key="safeArea" id="JcL-by-n69"/>
                                 <attributedString key="attributedText">
@@ -251,12 +256,6 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="none" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="39E-ij-KC5">
-                                <rect key="frame" x="0.0" y="437" width="375" height="67"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="35"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -276,7 +275,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3rQ-GX-ey2"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ESx-nX-dZH"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="a_sign" destination="A70-3q-rSs" id="82W-8H-fQe"/>
@@ -302,16 +300,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="COD3LTA.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="rn2-0w-54s">
-                                <rect key="frame" x="-190" y="638" width="343" height="150"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <accessibility key="accessibilityConfiguration" label="CODELTA">
-                                    <bool key="isElement" value="YES"/>
-                                </accessibility>
-                            </imageView>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" barStyle="black" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HMU-eJ-8lx">
-                                <rect key="frame" x="0.0" y="44" width="375" height="93"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <navigationBar contentMode="scaleToFill" barStyle="black" translucent="NO" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HMU-eJ-8lx">
+                                <rect key="frame" x="0.0" y="44" width="375" height="96"/>
                                 <viewLayoutGuide key="safeArea" id="NjB-xU-EK1"/>
                                 <items>
                                     <navigationItem title="QuadraSolve" largeTitleDisplayMode="always" id="PN0-7O-dHJ">
@@ -323,9 +313,8 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GRN-Cn-tno">
-                                <rect key="frame" x="16" y="295" width="343" height="255"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GRN-Cn-tno">
+                                <rect key="frame" x="16" y="286" width="343" height="185"/>
                                 <viewLayoutGuide key="safeArea" id="WkM-B8-8Ts"/>
                                 <attributedString key="attributedText">
                                     <fragment>
@@ -367,22 +356,31 @@ Android
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2dl-HL-6MW">
-                                <rect key="frame" x="16" y="137" width="343" height="150"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2dl-HL-6MW">
+                                <rect key="frame" x="16" y="140" width="343" height="138"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="2dl-HL-6MW" secondAttribute="height" multiplier="48:25" id="3lj-iw-rn7"/>
+                                    <constraint firstAttribute="width" secondItem="2dl-HL-6MW" secondAttribute="height" multiplier="1533:617" id="3lj-iw-rn7"/>
                                 </constraints>
                                 <viewLayoutGuide key="safeArea" id="k8f-jS-upZ"/>
                                 <fontDescription key="fontDescription" name=".SFNSText" family=".SF NS Text" pointSize="14"/>
                                 <state key="normal" image="COD3LTA.jpeg"/>
+                                <connections>
+                                    <action selector="sendMail:" destination="Tag-iP-wla" eventType="touchUpInside" id="a7x-HD-peN"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="jXv-bQ-ryy" firstAttribute="trailing" secondItem="GRN-Cn-tno" secondAttribute="trailing" constant="16" id="9KV-Jj-AU1"/>
                             <constraint firstItem="jXv-bQ-ryy" firstAttribute="trailing" secondItem="2dl-HL-6MW" secondAttribute="trailing" constant="16" id="Jsf-bZ-nSZ"/>
+                            <constraint firstItem="GRN-Cn-tno" firstAttribute="top" secondItem="2dl-HL-6MW" secondAttribute="bottom" constant="8" id="Uo9-9I-L2V"/>
+                            <constraint firstItem="2dl-HL-6MW" firstAttribute="top" secondItem="HMU-eJ-8lx" secondAttribute="bottom" id="oJP-VO-8Ec"/>
                             <constraint firstItem="2dl-HL-6MW" firstAttribute="leading" secondItem="jXv-bQ-ryy" secondAttribute="leading" constant="16" id="q8M-af-SGg"/>
-                            <constraint firstItem="2dl-HL-6MW" firstAttribute="top" secondItem="jXv-bQ-ryy" secondAttribute="bottom" constant="-641" id="zUm-FJ-jLs"/>
+                            <constraint firstItem="HMU-eJ-8lx" firstAttribute="top" secondItem="jXv-bQ-ryy" secondAttribute="top" id="tFe-AZ-IwO"/>
+                            <constraint firstItem="HMU-eJ-8lx" firstAttribute="leading" secondItem="jXv-bQ-ryy" secondAttribute="leading" id="vg4-nk-Fag"/>
+                            <constraint firstItem="GRN-Cn-tno" firstAttribute="leading" secondItem="jXv-bQ-ryy" secondAttribute="leading" constant="16" id="zKP-aA-cvJ"/>
+                            <constraint firstItem="HMU-eJ-8lx" firstAttribute="trailing" secondItem="jXv-bQ-ryy" secondAttribute="trailing" id="zOl-0w-xyZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jXv-bQ-ryy"/>
                         <connections>
@@ -391,6 +389,7 @@ Android
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <connections>
+                        <outlet property="CDMail" destination="2dl-HL-6MW" id="eUa-Ri-ecw"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="rSSegue" id="uNm-Ds-Pvp"/>
                     </connections>
                 </viewController>
@@ -401,7 +400,7 @@ Android
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="55.200000000000003" y="-37.684729064039409"/>
+            <point key="canvasLocation" x="21.600000000000001" y="-33.251231527093594"/>
         </scene>
     </scenes>
     <resources>
@@ -409,6 +408,6 @@ Android
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Q3T-fE-Gau"/>
-        <segue reference="cyj-cW-qlI"/>
+        <segue reference="uNm-Ds-Pvp"/>
     </inferredMetricsTieBreakers>
 </document>

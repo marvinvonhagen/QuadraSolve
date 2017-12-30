@@ -27,12 +27,13 @@ class InfoViewController: UIViewController, MFMailComposeViewControllerDelegate 
         // Dispose of any resources that can be recreated.
     }
     
-    @IBOutlet var contactUs: UIButton!
+    @IBOutlet var CDMail: UIButton!
     
     @IBAction func sendMail(_ sender: Any) {
         let mc: MFMailComposeViewController = MFMailComposeViewController()
         mc.mailComposeDelegate = self
         mc.setToRecipients(["COD3LTA@vHagen.me"])
+        mc.setSubject("QuadraSolve Support")
         self.present(mc, animated: true, completion: nil)
     }
     
