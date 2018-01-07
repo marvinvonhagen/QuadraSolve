@@ -168,7 +168,7 @@
                                 <rect key="frame" x="337" y="395" width="22" height="22"/>
                                 <viewLayoutGuide key="safeArea" id="3V6-Va-rws"/>
                                 <connections>
-                                    <segue destination="Tag-iP-wla" kind="show" id="Q3T-fE-Gau">
+                                    <segue destination="Tag-iP-wla" kind="showDetail" action="showViewController:sender:" id="Q3T-fE-Gau">
                                         <segue key="commit" inheritsFrom="parent" id="pK4-rH-YrU"/>
                                         <segue key="preview" inheritsFrom="commit" id="9H2-Mm-qPR"/>
                                     </segue>
@@ -178,16 +178,14 @@
                                 <rect key="frame" x="16" y="378" width="30" height="56"/>
                                 <viewLayoutGuide key="safeArea" id="vYl-3u-O6J"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="32"/>
-                                <state key="normal" title="ℝ">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <state key="normal" title="ℝ"/>
                                 <connections>
                                     <action selector="setOfNumbers:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZXb-rL-0Cx"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="none" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="39E-ij-KC5">
                                 <rect key="frame" x="0.0" y="437" width="375" height="67"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="35"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="35"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -290,12 +288,13 @@
                         <outlet property="p_value" destination="Zi2-yV-kVK" id="HPE-qG-5Ur"/>
                         <outlet property="q_sign" destination="GK6-9S-5Cm" id="xir-5K-Yhp"/>
                         <outlet property="q_value" destination="9a3-1G-hhU" id="5bS-bM-CWV"/>
+                        <outlet property="quadEquation" destination="jdv-PC-K76" id="Tan-Er-coh"/>
                         <outlet property="setOfNumbers" destination="lyW-sl-1dE" id="UP6-OH-If2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-880.79999999999995" y="-33.251231527093594"/>
+            <point key="canvasLocation" x="-721" y="-43"/>
         </scene>
         <!--Info View Controller-->
         <scene sceneID="kgD-ZC-G89">
@@ -308,16 +307,43 @@
                             <navigationBar contentMode="scaleToFill" barStyle="black" translucent="NO" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HMU-eJ-8lx">
                                 <rect key="frame" x="0.0" y="44" width="375" height="96"/>
                                 <viewLayoutGuide key="safeArea" id="NjB-xU-EK1"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                </textAttributes>
+                                <textAttributes key="largeTitleTextAttributes">
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="37"/>
+                                    <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
+                                </textAttributes>
                                 <items>
                                     <navigationItem title="QuadraSolve" largeTitleDisplayMode="always" id="PN0-7O-dHJ">
                                         <barButtonItem key="leftBarButtonItem" style="done" systemItem="done" id="Bsq-Tr-Y6U">
                                             <connections>
-                                                <segue destination="BYZ-38-t0r" kind="show" id="cyj-cW-qlI"/>
+                                                <action selector="doneAction:" destination="Tag-iP-wla" id="QtO-VM-fPv"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Twitter" style="done" id="G5V-Zb-h4s">
+                                            <connections>
+                                                <action selector="twitterCD:" destination="Tag-iP-wla" id="WRV-Xa-Erh"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TuX-OV-Os7">
+                                <rect key="frame" x="16" y="720" width="343" height="42"/>
+                                <accessibility key="accessibilityConfiguration" label="email"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
+                                <state key="normal" title="COD3LTA@vHagen.me"/>
+                                <connections>
+                                    <action selector="sendMail:" destination="Tag-iP-wla" eventType="touchUpInside" id="VKR-F8-EHm"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="COD3LTA.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="LBF-1b-AQt">
+                                <rect key="frame" x="16" y="140" width="343" height="138"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="LBF-1b-AQt" secondAttribute="height" multiplier="1533:617" id="Oar-Qs-7Wh"/>
+                                </constraints>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GRN-Cn-tno">
                                 <rect key="frame" x="16" y="286" width="343" height="201"/>
                                 <viewLayoutGuide key="safeArea" id="WkM-B8-8Ts"/>
@@ -340,13 +366,21 @@ Cg
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
-                                    <fragment>
-                                        <string key="content">Marvin von Hagen
-</string>
+                                    <fragment content="Marvin von Hagen">
                                         <attributes>
                                             <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <font key="NSFont" size="34" name="HelveticaNeue-Light"/>
                                             <font key="NSOriginalFont" size="34" name="HelveticaNeue-Light"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                        <attributes>
+                                            <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <font key="NSFont" size="34" name="HelveticaNeue-Light"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -388,27 +422,18 @@ Cg
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2dl-HL-6MW">
-                                <rect key="frame" x="16" y="140" width="343" height="138"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="2dl-HL-6MW" secondAttribute="height" multiplier="1533:617" id="3lj-iw-rn7"/>
-                                </constraints>
-                                <viewLayoutGuide key="safeArea" id="k8f-jS-upZ"/>
-                                <fontDescription key="fontDescription" name=".SFNSText" family=".SF NS Text" pointSize="14"/>
-                                <state key="normal" image="COD3LTA.jpeg"/>
-                                <connections>
-                                    <action selector="sendMail:" destination="Tag-iP-wla" eventType="touchUpInside" id="a7x-HD-peN"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="jXv-bQ-ryy" firstAttribute="trailing" secondItem="LBF-1b-AQt" secondAttribute="trailing" constant="16" id="0C9-g6-Frp"/>
+                            <constraint firstItem="LBF-1b-AQt" firstAttribute="top" secondItem="HMU-eJ-8lx" secondAttribute="bottom" id="0Ii-Lk-jH0"/>
+                            <constraint firstItem="LBF-1b-AQt" firstAttribute="leading" secondItem="jXv-bQ-ryy" secondAttribute="leading" constant="16" id="5cu-GS-PXE"/>
                             <constraint firstItem="jXv-bQ-ryy" firstAttribute="trailing" secondItem="GRN-Cn-tno" secondAttribute="trailing" constant="16" id="9KV-Jj-AU1"/>
-                            <constraint firstItem="jXv-bQ-ryy" firstAttribute="trailing" secondItem="2dl-HL-6MW" secondAttribute="trailing" constant="16" id="Jsf-bZ-nSZ"/>
-                            <constraint firstItem="GRN-Cn-tno" firstAttribute="top" secondItem="2dl-HL-6MW" secondAttribute="bottom" constant="8" id="Uo9-9I-L2V"/>
-                            <constraint firstItem="2dl-HL-6MW" firstAttribute="top" secondItem="HMU-eJ-8lx" secondAttribute="bottom" id="oJP-VO-8Ec"/>
-                            <constraint firstItem="2dl-HL-6MW" firstAttribute="leading" secondItem="jXv-bQ-ryy" secondAttribute="leading" constant="16" id="q8M-af-SGg"/>
+                            <constraint firstItem="TuX-OV-Os7" firstAttribute="bottom" secondItem="jXv-bQ-ryy" secondAttribute="bottom" constant="-16" id="J6f-nJ-Td7"/>
+                            <constraint firstItem="TuX-OV-Os7" firstAttribute="leading" secondItem="jXv-bQ-ryy" secondAttribute="leading" constant="16" id="Nd5-8K-uVV"/>
+                            <constraint firstItem="GRN-Cn-tno" firstAttribute="top" secondItem="LBF-1b-AQt" secondAttribute="bottom" constant="8" id="adP-20-ehG"/>
+                            <constraint firstItem="jXv-bQ-ryy" firstAttribute="trailing" secondItem="TuX-OV-Os7" secondAttribute="trailing" constant="16" id="mbe-ir-DAV"/>
                             <constraint firstItem="HMU-eJ-8lx" firstAttribute="top" secondItem="jXv-bQ-ryy" secondAttribute="top" id="tFe-AZ-IwO"/>
                             <constraint firstItem="HMU-eJ-8lx" firstAttribute="leading" secondItem="jXv-bQ-ryy" secondAttribute="leading" id="vg4-nk-Fag"/>
                             <constraint firstItem="GRN-Cn-tno" firstAttribute="leading" secondItem="jXv-bQ-ryy" secondAttribute="leading" constant="16" id="zKP-aA-cvJ"/>
@@ -421,7 +446,9 @@ Cg
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <connections>
-                        <outlet property="CDMail" destination="2dl-HL-6MW" id="eUa-Ri-ecw"/>
+                        <outlet property="Twitter" destination="G5V-Zb-h4s" id="7Xr-bC-b20"/>
+                        <outlet property="doneButton" destination="Bsq-Tr-Y6U" id="4lr-Wq-4sD"/>
+                        <outlet property="mailOutlet" destination="TuX-OV-Os7" id="nKm-5f-yM3"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="rSSegue" id="uNm-Ds-Pvp"/>
                     </connections>
                 </viewController>
@@ -440,6 +467,5 @@ Cg
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Q3T-fE-Gau"/>
-        <segue reference="cyj-cW-qlI"/>
     </inferredMetricsTieBreakers>
 </document>

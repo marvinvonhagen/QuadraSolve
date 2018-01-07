@@ -8,48 +8,73 @@
 
 import UIKit
 import MessageUI
+import StoreKit
 
 
 class InfoViewController: UIViewController, MFMailComposeViewControllerDelegate {
-
+    var ratingTimer: Timer!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        startRatingTimer()
     }
-
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBOutlet var mailOutlet: UIButton!
+    @IBOutlet var Twitter: UIBarButtonItem!
+    @IBOutlet var doneButton: UIBarButtonItem!
+    
+    
+    @objc func rR(_ timer: Timer) {
+        if #available(iOS 10.3, *) {
+            SKStoreReviewController.requestReview()
+        }
     }
     
-    @IBOutlet var CDMail: UIButton!
+    func startRatingTimer() {
+        if #available(iOS 10.3, *) {
+            ratingTimer = Timer.scheduledTimer(timeInterval: 15, target: self, selector: #selector(rR(_:)), userInfo: nil, repeats: false)
+        }
+    }
+    
     
     @IBAction func sendMail(_ sender: Any) {
-        let mc: MFMailComposeViewController = MFMailComposeViewController()
-        mc.mailComposeDelegate = self
-        mc.setToRecipients(["COD3LTA@vHagen.me"])
-        mc.setSubject("QuadraSolve Support")
-        self.present(mc, animated: true, completion: nil)
+        if !MFMailComposeViewController.canSendMail() {
+            print("Mail services are not available")
+            return
+        }
+        let composeVC = MFMailComposeViewController()
+        composeVC.mailComposeDelegate = self
+        composeVC.setToRecipients(["COD3LTA@vHagen.me"])
+        composeVC.setSubject("QuadraSolve Support")
+        ratingTimer.invalidate()
+        self.present(composeVC, animated: true, completion: nil)
     }
     
+    @IBAction func twitterCD(_ sender: Any) {
+        if let url = URL(string: "twitter://user?screen_name=COD3LTA") {
+            UIApplication.shared.open(url, options: [:])
+        }
+    }
     
     @IBAction func rSwipe(_ sender: Any) {
+        ratingTimer.invalidate()
         performSegue(withIdentifier: "rSSegue", sender: self)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func doneAction(_ sender: Any) {
+        ratingTimer.invalidate()
+        performSegue(withIdentifier: "rSSegue", sender: self)
     }
-    */
-
+    
+    
+    public func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        // Dismiss the mail compose view controller.
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
 }

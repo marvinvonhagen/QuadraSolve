@@ -10,7 +10,12 @@ class ViewController: UIViewController{
     //Wird bei Erscheinen des Views ausgeführt
     override func viewDidLoad() {
         super.viewDidLoad()
-        a_value.becomeFirstResponder()
+        if UIAccessibilityIsVoiceOverRunning() {
+            quadEquation.becomeFirstResponder()
+        } else {
+            a_value.becomeFirstResponder()
+
+        }
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -18,6 +23,7 @@ class ViewController: UIViewController{
     }
     
     //      Outlets - Verbindung zwischen UI und Code
+    @IBOutlet var quadEquation: UILabel!
     @IBOutlet var a_value: UITextField!
     @IBOutlet var p_value: UITextField!
     @IBOutlet var q_value: UITextField!
