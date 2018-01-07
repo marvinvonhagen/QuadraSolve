@@ -23,12 +23,6 @@
 	<key>UIApplicationShortcutItems</key>
 	<array>
 		<dict>
-			<key>UIApplicationShortcutItemIconType</key>
-			<string></string>
-			<key>UIApplicationShortcutItemSubtitle</key>
-			<string>a=1</string>
-			<key>UIApplicationShortcutItemTitle</key>
-			<string>PQ</string>
 			<key>UIApplicationShortcutItemType</key>
 			<string>com.M.vonhagen.app.QuadraSolve</string>
 		</dict>
@@ -46,7 +40,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>

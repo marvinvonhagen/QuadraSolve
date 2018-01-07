@@ -27,7 +27,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="QuadraSolve" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="flipHorizontal" id="BYZ-38-t0r" customClass="ViewController" customModule="QuadraSolve" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -156,7 +156,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ooC-RH-868">
-                                <rect key="frame" x="119" y="383" width="136" height="46"/>
+                                <rect key="frame" x="124" y="381" width="136" height="46"/>
                                 <viewLayoutGuide key="safeArea" id="xxN-se-t81"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="32"/>
                                 <state key="normal" title="Calculate"/>
@@ -168,7 +168,7 @@
                                 <rect key="frame" x="337" y="395" width="22" height="22"/>
                                 <viewLayoutGuide key="safeArea" id="3V6-Va-rws"/>
                                 <connections>
-                                    <segue destination="Tag-iP-wla" kind="showDetail" action="showViewController:sender:" id="Q3T-fE-Gau">
+                                    <segue destination="Tag-iP-wla" kind="showDetail" identifier="flip2Info" action="showViewController:sender:" id="Q3T-fE-Gau">
                                         <segue key="commit" inheritsFrom="parent" id="pK4-rH-YrU"/>
                                         <segue key="preview" inheritsFrom="commit" id="9H2-Mm-qPR"/>
                                     </segue>
@@ -184,7 +184,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="none" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="39E-ij-KC5">
-                                <rect key="frame" x="0.0" y="437" width="375" height="67"/>
+                                <rect key="frame" x="0.0" y="429" width="375" height="67"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="35"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -277,6 +277,9 @@
                             <constraint firstItem="NJf-TU-fc0" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="vKc-L3-5L9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3rQ-GX-ey2"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="p2x-f0-GJV" appends="YES" id="2Vq-qq-cow"/>
+                        </connections>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <connections>
@@ -290,16 +293,22 @@
                         <outlet property="q_value" destination="9a3-1G-hhU" id="5bS-bM-CWV"/>
                         <outlet property="quadEquation" destination="jdv-PC-K76" id="Tan-Er-coh"/>
                         <outlet property="setOfNumbers" destination="lyW-sl-1dE" id="UP6-OH-If2"/>
+                        <outlet property="swipeRecOutlet" destination="p2x-f0-GJV" id="78S-s8-XB2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="p2x-f0-GJV">
+                    <connections>
+                        <action selector="flipper:" destination="BYZ-38-t0r" id="sHH-rm-WVA"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-721" y="-43"/>
         </scene>
         <!--Info View Controller-->
         <scene sceneID="kgD-ZC-G89">
             <objects>
-                <viewController id="Tag-iP-wla" customClass="InfoViewController" customModule="QuadraSolve" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="flipHorizontal" id="Tag-iP-wla" customClass="InfoViewController" customModule="QuadraSolve" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jsM-AA-Row">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -339,13 +348,13 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="COD3LTA.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="LBF-1b-AQt">
-                                <rect key="frame" x="16" y="140" width="343" height="138"/>
+                                <rect key="frame" x="16" y="148" width="343" height="138"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="LBF-1b-AQt" secondAttribute="height" multiplier="1533:617" id="Oar-Qs-7Wh"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GRN-Cn-tno">
-                                <rect key="frame" x="16" y="286" width="343" height="201"/>
+                                <rect key="frame" x="16" y="294" width="343" height="201"/>
                                 <viewLayoutGuide key="safeArea" id="WkM-B8-8Ts"/>
                                 <attributedString key="attributedText">
                                     <fragment content="iOS">
@@ -427,7 +436,7 @@ Cg
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="jXv-bQ-ryy" firstAttribute="trailing" secondItem="LBF-1b-AQt" secondAttribute="trailing" constant="16" id="0C9-g6-Frp"/>
-                            <constraint firstItem="LBF-1b-AQt" firstAttribute="top" secondItem="HMU-eJ-8lx" secondAttribute="bottom" id="0Ii-Lk-jH0"/>
+                            <constraint firstItem="LBF-1b-AQt" firstAttribute="top" secondItem="HMU-eJ-8lx" secondAttribute="bottom" constant="8" id="0Ii-Lk-jH0"/>
                             <constraint firstItem="LBF-1b-AQt" firstAttribute="leading" secondItem="jXv-bQ-ryy" secondAttribute="leading" constant="16" id="5cu-GS-PXE"/>
                             <constraint firstItem="jXv-bQ-ryy" firstAttribute="trailing" secondItem="GRN-Cn-tno" secondAttribute="trailing" constant="16" id="9KV-Jj-AU1"/>
                             <constraint firstItem="TuX-OV-Os7" firstAttribute="bottom" secondItem="jXv-bQ-ryy" secondAttribute="bottom" constant="-16" id="J6f-nJ-Td7"/>
@@ -453,13 +462,13 @@ Cg
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TpE-bF-NbV" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="gJn-zW-heY">
+                <swipeGestureRecognizer direction="left" id="gJn-zW-heY">
                     <connections>
                         <action selector="rSwipe:" destination="Tag-iP-wla" id="uFk-By-JW7"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="21.600000000000001" y="-33.251231527093594"/>
+            <point key="canvasLocation" x="20" y="-44"/>
         </scene>
     </scenes>
     <resources>

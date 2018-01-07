@@ -14,7 +14,7 @@ class ViewController: UIViewController{
             quadEquation.becomeFirstResponder()
         } else {
             a_value.becomeFirstResponder()
-
+            
         }
     }
     
@@ -33,7 +33,8 @@ class ViewController: UIViewController{
     @IBOutlet var out: UILabel!
     @IBOutlet var calc: UIButton!
     @IBOutlet var setOfNumbers: UIButton!
-    
+    @IBOutlet var swipeRecOutlet: UISwipeGestureRecognizer!
+
     
     //      Vorzeichen
     @IBAction func a_sign(_ sender: Any) {
@@ -121,8 +122,7 @@ class ViewController: UIViewController{
         var p: Double
         var q: Double
         
-        var aStr = a_value.text!
-        let aP = String(aStr.characters.map {$0 == "," ? "." : $0})
+        let aP = String(a_value.text!.replacingOccurrences(of: ",", with: "."))
         if a_sign.title(for: .normal)=="+"{
             a = Double(aP)!
         }
@@ -130,8 +130,7 @@ class ViewController: UIViewController{
             a = -1*Double(aP)!
         }
         
-        var pStr = p_value.text!
-        let pP = String(pStr.characters.map {$0 == "," ? "." : $0})
+        let pP = String(p_value.text!.replacingOccurrences(of: ",", with: "."))
         if p_sign.title(for: .normal)=="+"{
             p = Double(pP)!/a
         }
@@ -139,8 +138,7 @@ class ViewController: UIViewController{
             p = (-1*Double(pP)!)/a
         }
         
-        var qStr = q_value.text!
-        let qP = String(qStr.characters.map {$0 == "," ? "." : $0})
+        let qP = String(q_value.text!.replacingOccurrences(of: ",", with: "."))
         if q_sign.title(for: .normal)=="+"{
             q = Double(qP)!/a
         }
@@ -163,8 +161,8 @@ class ViewController: UIViewController{
                 comma = true
             }
             if comma==true {
-                r1 = String(r1.characters.map {$0 == "." ? "," : $0})
-                r2 = String(r2.characters.map {$0 == "." ? "," : $0})
+                r1 = String(r1.replacingOccurrences(of: ".", with: ","))
+                r2 = String(r2.replacingOccurrences(of: ".", with: ","))
                 
             }
             
@@ -179,8 +177,8 @@ class ViewController: UIViewController{
                 var b = String(round(sqrt(-1*uSqrt)*1000)/1000)
                 
                 if comma==true {
-                    u = String(u.characters.map {$0 == "." ? "," : $0})
-                    b = String(b.characters.map {$0 == "." ? "," : $0})
+                    u = String(u.replacingOccurrences(of: ".", with: ","))
+                    b = String(b.replacingOccurrences(of: ".", with: ","))
                 }
                 
                 if p != 0{
@@ -194,5 +192,10 @@ class ViewController: UIViewController{
                 out.text = "\(a_value.text!)x²\(String(describing: q_sign.title(for: .normal)!))\(p_value.text!)x\(String(describing: q_sign.title(for: .normal)!))\(q_value.text!)≠0"
             }
         }
+    }
+    
+
+    @IBAction func flipper(_ sender: Any) {
+                performSegue(withIdentifier: "flip2Info", sender: self)
     }
 }
