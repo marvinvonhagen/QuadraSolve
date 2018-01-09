@@ -155,7 +155,7 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ooC-RH-868">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ooC-RH-868" userLabel="calcButton">
                                 <rect key="frame" x="124" y="381" width="136" height="46"/>
                                 <viewLayoutGuide key="safeArea" id="xxN-se-t81"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="32"/>
@@ -164,7 +164,7 @@
                                     <action selector="calc_button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Acs-ro-r8e"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJf-TU-fc0">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJf-TU-fc0" userLabel="infoButton">
                                 <rect key="frame" x="337" y="395" width="22" height="22"/>
                                 <viewLayoutGuide key="safeArea" id="3V6-Va-rws"/>
                                 <connections>
@@ -174,7 +174,7 @@
                                     </segue>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lyW-sl-1dE" userLabel="Set of Numbers">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lyW-sl-1dE" userLabel="setOfNumbers">
                                 <rect key="frame" x="16" y="378" width="30" height="56"/>
                                 <viewLayoutGuide key="safeArea" id="vYl-3u-O6J"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="32"/>
@@ -183,13 +183,13 @@
                                     <action selector="setOfNumbers:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZXb-rL-0Cx"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="none" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="39E-ij-KC5">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="none" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="39E-ij-KC5" userLabel="outputLabel">
                                 <rect key="frame" x="0.0" y="429" width="375" height="67"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="35"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="none" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="jdv-PC-K76">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="none" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="jdv-PC-K76" userLabel="quadEquation">
                                 <rect key="frame" x="16" y="44" width="343" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="jdv-PC-K76" secondAttribute="height" multiplier="343:75" id="vmp-t6-FMe"/>
@@ -338,7 +338,7 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TuX-OV-Os7">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TuX-OV-Os7" userLabel="mailButton">
                                 <rect key="frame" x="16" y="720" width="343" height="42"/>
                                 <accessibility key="accessibilityConfiguration" label="email"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
@@ -353,7 +353,7 @@
                                     <constraint firstAttribute="width" secondItem="LBF-1b-AQt" secondAttribute="height" multiplier="1533:617" id="Oar-Qs-7Wh"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GRN-Cn-tno">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GRN-Cn-tno" userLabel="creditsLabel">
                                 <rect key="frame" x="16" y="294" width="343" height="201"/>
                                 <viewLayoutGuide key="safeArea" id="WkM-B8-8Ts"/>
                                 <attributedString key="attributedText">
