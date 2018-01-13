@@ -1,4 +1,4 @@
-# QuadraSolve
+# QuadraSolve for iOS
 
 Solve quadratic equations using VoiceOver!
 
